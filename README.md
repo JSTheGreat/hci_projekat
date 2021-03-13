@@ -1,2 +1,1 @@
-# hci_projekat
-Projekat iz predmeta Interakcija Čovek Računar
+# Projekat iz predmeta Interakcija Čovek Računar
