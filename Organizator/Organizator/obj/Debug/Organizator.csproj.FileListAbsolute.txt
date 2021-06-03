@@ -1,0 +1,17 @@
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\bin\Debug\Organizator.exe.config
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\bin\Debug\Organizator.exe
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\bin\Debug\Organizator.pdb
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Organizator.csprojAssemblyReference.cache
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\MainWindow.g.cs
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\App.g.cs
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Organizator_MarkupCompile.cache
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Organizator_MarkupCompile.lref
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\MainWindow.baml
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Organizator.g.resources
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Organizator.Properties.Resources.resources
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Organizator.csproj.GenerateResource.cache
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Organizator.csproj.CoreCompileInputs.cache
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Organizator.exe
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Organizator.pdb
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Layouts\LogIn.g.cs
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Layouts\LogIn.baml

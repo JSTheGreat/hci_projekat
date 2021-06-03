@@ -1,0 +1,17 @@
+﻿<Window x:Class="Organizator.Layouts.LogIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Organizator.Layouts"
+        mc:Ignorable="d"
+        Title="LogIn" Height="450" Width="800">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="227,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="227,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303"/>
+        <Button Content="Log in" HorizontalAlignment="Left" Height="22" Margin="327,263,0,0" VerticalAlignment="Top" Width="87" RenderTransformOrigin="0.503,1.873"/>
+        <Label Content="Username" HorizontalAlignment="Left" Height="26" Margin="227,61,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label Content="Password" HorizontalAlignment="Left" Height="26" Margin="227,155,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="1.851,0.418"/>
+
+    </Grid>
+</Window>
