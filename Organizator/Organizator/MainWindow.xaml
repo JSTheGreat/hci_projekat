@@ -16,9 +16,12 @@
                     <!-- Prikazujemo preko Dock Panela koji preuzme sav prostor -->
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
-            <MenuItem Header="_Login" Click="MenuItem_Click"></MenuItem>
-            <MenuItem Header="_Event requests" IsEnabled="False"></MenuItem>
-            <MenuItem Header="_Business associates" IsEnabled="False"></MenuItem>
+            <MenuItem Header="_Registration">
+                <MenuItem x:Name="login_btn" Header="_Log in" Click="MenuItem_Click"></MenuItem>
+                <MenuItem x:Name="logout_btn" Header="_Log out" IsEnabled="False"></MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="requests" Header="_Event requests" IsEnabled="False"></MenuItem>
+            <MenuItem x:Name="associates" Header="_Business associates" IsEnabled="False"></MenuItem>
         </Menu>
     </DockPanel>
 </Window>
