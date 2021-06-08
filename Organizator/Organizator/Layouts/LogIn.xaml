@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Organizator.Layouts"
         mc:Ignorable="d"
-        Title="LogIn" Height="450" Width="800">
+        Title="LogIn" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBox x:Name="Username" HorizontalAlignment="Left" Height="23" Margin="227,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" TextChanged="TextBox_TextChanged"/>
         <Button Content="Log in" HorizontalAlignment="Left" Height="22" Margin="327,263,0,0" VerticalAlignment="Top" Width="87" RenderTransformOrigin="0.503,1.873" Click="Button_Click"/>

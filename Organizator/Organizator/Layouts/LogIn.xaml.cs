@@ -30,8 +30,9 @@ namespace Organizator.Layouts
 
         public LogIn()
         {
+            App.Current.Resources["windowOpened"] = false;
             IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream("C://Users/jovan/Desktop/hci_projekat/Organizator/Organizator/Files/users.txt", FileMode.Open, FileAccess.Read);
+            Stream stream = new FileStream("../../Files/users.txt", FileMode.Open, FileAccess.Read);
             this.users = (Users)formatter.Deserialize(stream);
             stream.Close();
             InitializeComponent();
@@ -41,12 +42,15 @@ namespace Organizator.Layouts
         {
             User user = new User(this.username, this.password);
             if (!this.users.userExists(user))
-                MessageBox.Show("Check spelling on username or password");
+                MessageBox.Show("User with given username and password does not exist. Please check spelling on username or password", "Warning");
             else
             {
-                Console.WriteLine(App.Current.Properties["logged_in"]);
-                App.Current.Properties["logged_in"] = user;
-                Console.WriteLine(App.Current.Properties["logged_in"].ToString());
+                Console.WriteLine(App.Current.Properties["current_user"]);
+                App.Current.Properties["current_user"] = this.username;
+                App.Current.Resources["loggedIn"] = true;
+                App.Current.Resources["loggedOut"] = false;
+                Console.WriteLine(App.Current.Properties["current_user"]);
+                App.Current.Resources["windowOpened"] = true;
                 Close();
             }
         }

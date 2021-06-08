@@ -15,3 +15,6 @@ C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Organizato
 C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Organizator.pdb
 C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Layouts\LogIn.g.cs
 C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Layouts\LogIn.baml
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\App.baml
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Layouts\AllAsociates.g.cs
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Layouts\AllAsociates.baml

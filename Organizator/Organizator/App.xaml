@@ -1,9 +1,14 @@
-﻿<Application x:Class="Organizator.App"
+﻿<Application
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Organizator"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Organizator.App"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        
+
+        <System:Boolean x:Key="loggedIn">False</System:Boolean>
+        <System:Boolean x:Key="loggedOut">True</System:Boolean>
+        <System:Boolean x:Key="windowOpened">True</System:Boolean>
+
     </Application.Resources>
 </Application>

@@ -34,10 +34,10 @@ namespace Organizator
             list.Add(user2);
             Users users = new Users(list);
             IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream("C://Users/jovan/Desktop/hci_projekat/Organizator/Organizator/Files/users.txt", FileMode.Create, FileAccess.Write);
+            Stream stream = new FileStream("../../Files/users.txt", FileMode.Create, FileAccess.Write);
             formatter.Serialize(stream, users);
             stream.Close();
-            stream = new FileStream("C://Users/jovan/Desktop/hci_projekat/Organizator/Organizator/Files/users.txt", FileMode.Open, FileAccess.Read);
+            stream = new FileStream("../../Files/users.txt", FileMode.Open, FileAccess.Read);
             Users users2 = (Users)formatter.Deserialize(stream);
             stream.Close();
             foreach (var u in users2.users)
@@ -45,6 +45,21 @@ namespace Organizator
              Console.WriteLine(u.username);
              Console.WriteLine(u.password);
             }
+            stream = new FileStream("../../Files/associates.txt", FileMode.Create, FileAccess.Write);
+            Associate as1 = new Associate("as1", "pl1", "restaurant", "555-111");
+            Associate as2 = new Associate("as2", "pl2", "catering firm", "555-222");
+            Associate as3 = new Associate("as3", "pl3", "catering firm", "555-333");
+            Associate as4 = new Associate("as4", "pl4", "restaurant", "555-444");
+            Associate as5 = new Associate("as5", "pl5", "restaurant", "555-555");
+            List<Associate> list2 = new List<Associate>();
+            list2.Add(as5);
+            list2.Add(as4);
+            list2.Add(as3);
+            list2.Add(as2);
+            list2.Add(as1);
+            Associates associates = new Associates(list2);
+            formatter.Serialize(stream, associates);
+            stream.Close();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -53,5 +68,18 @@ namespace Organizator
             s.Show();
         }
 
+        private void logout_btn_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Properties["current_user"] = null;
+            App.Current.Resources["loggedIn"] = false;
+            App.Current.Resources["loggedOut"] = true;
+            MessageBox.Show("You have successfully logged out", "Info");
+        }
+
+        private void all_associates(object sender, RoutedEventArgs e)
+        {
+            var s = new Layouts.AllAsociates();
+            s.Show();
+        }
     }
 }
