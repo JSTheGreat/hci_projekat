@@ -45,11 +45,6 @@ namespace Organizator.Layouts
             this.name = Name.Text; 
         }
 
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-            this.type = Type.Text;
-        }
-
         private void Number_TextChanged(object sender, TextChangedEventArgs e)
         {
             this.number = Number.Text;
@@ -66,6 +61,7 @@ namespace Organizator.Layouts
                 MessageBox.Show("No field can remain empty", "Warning");
             else
             {
+                Console.WriteLine("type: " + type);
                 IFormatter formatter = new BinaryFormatter();
                 Stream stream = new FileStream("../../Files/associates.txt", FileMode.Open, FileAccess.Read);
                 Associates associates = (Associates)formatter.Deserialize(stream);
@@ -76,6 +72,11 @@ namespace Organizator.Layouts
                 stream.Close();
                 Close();
             }
+        }
+
+        private void Type_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.type = Type.Text;
         }
     }
 }

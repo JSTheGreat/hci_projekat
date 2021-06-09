@@ -11,11 +11,14 @@
         <Label Content="Name:" HorizontalAlignment="Left" Height="23" Margin="123,61,0,0" VerticalAlignment="Top" Width="102"/>
         <TextBox x:Name="Number" HorizontalAlignment="Left" Height="26" Margin="123,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" TextChanged="Number_TextChanged"/>
         <Label Content="Number:" HorizontalAlignment="Left" Height="24" Margin="123,199,0,0" VerticalAlignment="Top" Width="102"/>
-        <TextBox x:Name="Type" HorizontalAlignment="Left" Height="26" Margin="448,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" TextChanged="TextBox_TextChanged_1"/>
         <Label Content="Type:" HorizontalAlignment="Left" Height="23" Margin="448,61,0,0" VerticalAlignment="Top" Width="102"/>
         <TextBox x:Name="Place" HorizontalAlignment="Left" Height="26" Margin="448,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" TextChanged="Place_TextChanged"/>
         <Label Content="Address:" HorizontalAlignment="Left" Height="24" Margin="448,199,0,0" VerticalAlignment="Top" Width="102"/>
         <Button Content="Add bussiness associate" HorizontalAlignment="Left" Height="44" Margin="320,335,0,0" VerticalAlignment="Top" Width="146" Background="#FF0492F6" Click="Button_Click"/>
+        <ComboBox x:Name="Type" HorizontalAlignment="Left" Height="26" Margin="448,89,0,0" VerticalAlignment="Top" Width="221" SelectionChanged="Type_SelectionChanged">
+            <ComboBoxItem IsSelected="True">restaurant</ComboBoxItem>
+            <ComboBoxItem>catering firm</ComboBoxItem>
+        </ComboBox>
 
     </Grid>
 </Window>
