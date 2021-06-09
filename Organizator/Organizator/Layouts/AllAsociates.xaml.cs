@@ -24,23 +24,38 @@ namespace Organizator.Layouts
     /// </summary>
     public partial class AllAsociates : Window
     {
-        private ObservableCollection<Associate> associates = new ObservableCollection<Associate>();
+        public ObservableCollection<Associate> Asssociates
+        {
+            get;
+            set;
+        }
 
         public AllAsociates()
         {
+            InitializeComponent();
             this.DataContext = this;
             App.Current.Resources["windowOpened"] = false;
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream("../../Files/associates.txt", FileMode.Open, FileAccess.Read);
             Associates a = (Associates)formatter.Deserialize(stream);
             List<Associate> list = a.toList();
+            Asssociates = new ObservableCollection<Associate>();
             foreach (var l in list)
             {
-                Console.WriteLine($"{l.place} {l.name}");
-                this.associates.Add(l);
+                Console.WriteLine($"{l.Place} {l.Name}");
+                Asssociates.Add(l);
             }
             stream.Close();
-            InitializeComponent();
+        }
+
+        private void ClosingEvent(object sender, EventArgs e)
+        {
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream("../../Files/associates.txt", FileMode.Create, FileAccess.Write);
+            Associates associates = new Associates(Asssociates);
+            formatter.Serialize(stream, associates);
+            stream.Close();
+            App.Current.Resources["windowOpened"] = true;
         }
     }
 }

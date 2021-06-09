@@ -64,5 +64,10 @@ namespace Organizator.Layouts
         {
             this.password = Password.Password;
         }
+
+        private void ClosingEvent(object sender, EventArgs e)
+        {
+            App.Current.Resources["windowOpened"] = true;
+        }
     }
 }

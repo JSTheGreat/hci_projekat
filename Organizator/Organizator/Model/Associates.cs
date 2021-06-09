@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,16 @@ namespace Organizator.Model
             this.associates = associates;
         }
 
+        public Associates(ObservableCollection<Associate> associates)
+        {
+            List<Associate> list = new List<Associate>();
+            foreach(var a in associates)
+            {
+                list.Add(a);
+            }
+            this.associates = list;
+        }
+
         public void addAssociate(Associate associate)
         {
             this.associates.Add(associate);
@@ -26,5 +37,6 @@ namespace Organizator.Model
         {
             return this.associates;
         }
+
     }
 }

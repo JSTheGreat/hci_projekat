@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,20 +8,94 @@ using System.Threading.Tasks;
 namespace Organizator.Model
 {
     [Serializable]
-    class Associate
+    public class Associate: INotifyPropertyChanged
     {
 
-        public string name;
-        public string place;
-        public string type;
-        public string number;
+        [field: NonSerializedAttribute()]
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        private string _name;
+        private string _place;
+        private string _type;
+        private string _number;
 
         public Associate(string name, string place, string type, string number)
         {
-            this.name = name;
-            this.number = number;
-            this.place = place;
-            this.type = type;
+            this._name = name;
+            this._number = number;
+            this._place = place;
+            this._type = type;
+        }
+
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                if (value != _name)
+                {
+                    _name = value;
+                    OnPropertyChanged("Name");
+                }
+            }
+        }
+
+        public string Number
+        {
+            get
+            {
+                return _number;
+            }
+            set
+            {
+                if (value != _number)
+                {
+                    _number = value;
+                    OnPropertyChanged("Number");
+                }
+            }
+        }
+
+        public string Place
+        {
+            get
+            {
+                return _place;
+            }
+            set
+            {
+                if (value != _place)
+                {
+                    _place = value;
+                    OnPropertyChanged("Place");
+                }
+            }
+        }
+
+        public string Type
+        {
+            get
+            {
+                return _type;
+            }
+            set
+            {
+                if (value != _type)
+                {
+                    _type = value;
+                    OnPropertyChanged("Type");
+                }
+            }
         }
 
     }

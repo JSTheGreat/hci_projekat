@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Organizator.Layouts"
         mc:Ignorable="d"
-        Title="AllAsociates" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="All associates" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closed="ClosingEvent">
     <Grid>
-        <DataGrid ItemsSource="{Binding associates}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dgrMain" ItemsSource="{Binding Asssociates}" IsReadOnly="True"/>
+        <Grid Grid.Column="0" Grid.Row="1" DataContext="{Binding ElementName=dgrMain,Path=SelectedItem}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,98.664,17.8" Grid.RowSpan="2">Name:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Margin="0,18,98.664,18.2" Grid.RowSpan="3">Place:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0.2,98.664,17.6" Grid.RowSpan="2">Type:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,18.2,98.664,-0.4" Grid.RowSpan="2">Number:</TextBlock>
+
+            <TextBox Grid.Row="0" Text="{Binding Path=Name}" Grid.ColumnSpan="3" Margin="46,0,-0.4,17.8" Grid.RowSpan="2"/>
+            <TextBox Text="{Binding Path=Place}" Grid.ColumnSpan="3" Margin="46,18,-0.4,18.2" Grid.RowSpan="3"/>
+            <TextBox Grid.Row="2" Text="{Binding Path=Type}" Grid.ColumnSpan="3" Margin="46,0.2,-0.4,17.6" Grid.RowSpan="2"/>
+            <TextBox Grid.Row="2" Text="{Binding Path=Number}" Grid.ColumnSpan="3" Margin="46,18.2,-0.4,-0.4" Grid.RowSpan="2"/>
+        </Grid>
     </Grid>
 </Window>
