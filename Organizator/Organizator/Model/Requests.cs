@@ -51,5 +51,15 @@ namespace Organizator.Model
         {
             return this.requests;
         }
+
+        public Request byClient(string client)
+        {
+            foreach(var r in requests)
+            {
+                if (r.Client.Equals(client))
+                    return r;
+            }
+            return null;
+        }
     }
 }

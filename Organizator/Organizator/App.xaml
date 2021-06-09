@@ -9,6 +9,7 @@
         <System:Boolean x:Key="loggedIn">False</System:Boolean>
         <System:Boolean x:Key="loggedOut">True</System:Boolean>
         <System:Boolean x:Key="windowOpened">True</System:Boolean>
+        <System:Boolean x:Key="requestsOpened">True</System:Boolean>
 
     </Application.Resources>
 </Application>

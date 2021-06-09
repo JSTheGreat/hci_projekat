@@ -30,6 +30,8 @@ namespace Organizator.Layouts
             set;
         }
 
+        private Requests all;
+
         public AllOrganizerRequests()
         {
             InitializeComponent();
@@ -37,10 +39,11 @@ namespace Organizator.Layouts
             App.Current.Resources["windowOpened"] = false;
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream("../../Files/requests.txt", FileMode.Open, FileAccess.Read);
-            Requests a = (Requests)formatter.Deserialize(stream);
+            all = (Requests)formatter.Deserialize(stream);
             Reqquests = new ObservableCollection<Request>();
             string user = (string)App.Current.Properties["current_user"];
-            foreach (var l in a.byUser(user))
+            Console.WriteLine($"username in requests: {user}");
+            foreach (var l in all.byUser(user))
             {
                 Console.WriteLine($"{l.Place} {l.Organizer} {l.MaxBudget}");
                 Reqquests.Add(l);
@@ -52,10 +55,24 @@ namespace Organizator.Layouts
         {
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream("../../Files/requests.txt", FileMode.Create, FileAccess.Write);
-            Requests associates = new Requests(Reqquests);
-            formatter.Serialize(stream, associates);
+            formatter.Serialize(stream, all);
             stream.Close();
             App.Current.Resources["windowOpened"] = true;
+        }
+
+        private void suggest_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Request r = all.byClient(suggest_btn.Content.ToString());
+            App.Current.Properties["Client"] = r.Client;
+            App.Current.Properties["MaxBudget"] = r.MaxBudget;
+            App.Current.Properties["PartyType"] = r.PartyType;
+            App.Current.Properties["Place"] = r.Place;
+            App.Current.Properties["Time"] = r.Time;
+            App.Current.Resources["requestsOpened"] = false;
+            Console.WriteLine($"Client: {r.Client}, Time: {r.Time}, MaxBudget: {r.MaxBudget}");
+            var s = new Suggestions();
+            s.Show();
+            Console.WriteLine(suggest_btn.Content.ToString());
         }
     }
 }
