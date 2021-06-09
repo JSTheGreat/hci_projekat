@@ -20,3 +20,5 @@ C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Layouts\Al
 C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Layouts\AllAsociates.baml
 C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Layouts\AddAssociate.g.cs
 C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Layouts\AddAssociate.baml
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Layouts\AllOrganizerRequests.g.cs
+C:\Users\jovan\Desktop\hci_projekat\Organizator\Organizator\obj\Debug\Layouts\AllOrganizerRequests.baml

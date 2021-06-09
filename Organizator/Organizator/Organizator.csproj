@@ -63,6 +63,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Layouts\AllOrganizerRequests.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Layouts\LogIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -80,6 +84,9 @@
     </Compile>
     <Compile Include="Layouts\AllAsociates.xaml.cs">
       <DependentUpon>AllAsociates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\AllOrganizerRequests.xaml.cs">
+      <DependentUpon>AllOrganizerRequests.xaml</DependentUpon>
     </Compile>
     <Compile Include="Layouts\LogIn.xaml.cs">
       <DependentUpon>LogIn.xaml</DependentUpon>

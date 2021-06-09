@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,20 +18,38 @@ namespace Organizator.Model
             this.requests = requests;
         }
 
+        public Requests(ObservableCollection<Request> requests)
+        {
+            List<Request> list = new List<Request>();
+            foreach (var r in requests)
+            {
+                list.Add(r);
+            }
+            this.requests = list;
+        }
+
         public List<Request> byUser(string user)
         {
             List<Request> newList = new List<Request>();
             foreach(Request request in this.requests)
             {
-                if (request.organizer.Equals(user))
+                if (request.Organizer.Equals(user))
                     newList.Add(request);
             }
             return newList;
         }
 
-        public void remove(Request request)
+        public void remove(ObservableCollection<Request> deleteList)
         {
-            this.requests.Remove(request);
+            foreach(Request r in deleteList)
+            {
+                this.requests.Remove(r);
+            }
+        }
+
+        internal List<Request> toList()
+        {
+            return this.requests;
         }
     }
 }
