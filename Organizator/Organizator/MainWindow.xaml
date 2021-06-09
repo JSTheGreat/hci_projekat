@@ -24,7 +24,7 @@
             <MenuItem x:Name="requests" Header="_Event requests" IsEnabled="{DynamicResource loggedIn}"/>
             <MenuItem x:Name="associates" Header="_Business associates" IsEnabled="{DynamicResource loggedIn}" Margin="0,0,0,-0.2" Width="613">
                 <MenuItem Header="_All business associates" Click="all_associates"/>
-                <MenuItem Header="_Add associate"/>
+                <MenuItem Header="_Add associate" Click="MenuItem_Click_1"/>
             </MenuItem>
         </Menu>
     </DockPanel>

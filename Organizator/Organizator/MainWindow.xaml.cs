@@ -81,5 +81,11 @@ namespace Organizator
             var s = new Layouts.AllAsociates();
             s.Show();
         }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            var s = new Layouts.AddAssociate();
+            s.Show();
+        }
     }
 }
