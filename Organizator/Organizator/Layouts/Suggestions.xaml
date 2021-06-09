@@ -7,6 +7,49 @@
         mc:Ignorable="d"
         Title="Suggestions" Height="450" Width="800" Closed="Window_Closed" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="350"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="400"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Content="Drag the suggestions to the other side then press button below to confirm Your choice"/>
+        <ListView Grid.Column="0" Grid.Row="1" ItemsSource="{Binding Offfers}" PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown" MouseMove="ListView_MouseMove">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding AssociateName}" FontWeight="Bold" />
+                        <TextBlock Text=", " />
+                        <TextBlock Text="{Binding Time}" />
+                        <TextBlock Text=", " />
+                        <TextBlock Text="{Binding Place}" />
+                        <TextBlock Text=", " />
+                        <TextBlock Text="{Binding Price}" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ListView Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Offfers2}" AllowDrop="True" DragEnter="ListView_DragEnter" Drop="ListView_Drop">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding AssociateName}" FontWeight="Bold" />
+                        <TextBlock Text=", " />
+                        <TextBlock Text="{Binding Time}" />
+                        <TextBlock Text=", " />
+                        <TextBlock Text="{Binding Place}" />
+                        <TextBlock Text=", " />
+                        <TextBlock Text="{Binding Price}" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Content="Send suggestions" Background="#FF138CFD"/>
+
     </Grid>
 </Window>

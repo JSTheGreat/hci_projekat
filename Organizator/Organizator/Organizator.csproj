@@ -106,7 +106,8 @@
   <ItemGroup>
     <Compile Include="Model\Associate.cs" />
     <Compile Include="Model\Associates.cs" />
-    <Compile Include="Model\Event.cs" />
+    <Compile Include="Model\Offer.cs" />
+    <Compile Include="Model\Offers.cs" />
     <Compile Include="Model\Request.cs" />
     <Compile Include="Model\Requests.cs" />
     <Compile Include="Model\User.cs" />
