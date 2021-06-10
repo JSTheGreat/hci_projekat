@@ -55,10 +55,32 @@ namespace Organizator.Layouts
             Stream stream = new FileStream("../../Files/associates.txt", FileMode.Open, FileAccess.Read);
             Associates associates = (Associates)formatter.Deserialize(stream);
             stream.Close();
-            foreach(var a in associates.toList())
+            stream = new FileStream("../../Files/sentOffers.txt", FileMode.Open, FileAccess.Read);
+            Offers offers = (Offers)formatter.Deserialize(stream);
+            stream.Close();
+            foreach (var a in associates.toList())
             {
-                if (a.Place == place && a.Name == user)
-                    Offfers.Add(new Offer(place, a.Name, time, 2500));
+                int price;
+                if (a.Type.Equals("restaurant"))
+                    price = 3500;
+                else
+                    price = 2500;
+                Offer newOffer = new Offer(place, a.Name, time, price, user, client);
+                Console.WriteLine($"offers from file: {offers.toList().Count}");
+                bool available = true;
+                if (a.Place != place)
+                    available = false;
+                if (budget < newOffer.Price)
+                    available = false;
+                if (type.Contains("party") && a.Type.Equals("catering firm"))
+                    available = false;
+                if (available)
+                {
+                    if (!offers.offerExists(newOffer))
+                        Offfers.Add(newOffer);
+                    else if (offers.sameSender(user, client))
+                        Offfers2.Add(newOffer);
+                }
             }
         }
 
@@ -126,6 +148,19 @@ namespace Organizator.Layouts
         private void Window_Closed(object sender, EventArgs e)
         {
             App.Current.Resources["requestsOpened"] = true;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream("../../Files/sentOffers.txt", FileMode.Open, FileAccess.Read);
+            Offers offers = (Offers)formatter.Deserialize(stream);
+            stream.Close();
+            offers.addOffer(Offfers2);
+            stream = new FileStream("../../Files/sentOffers.txt", FileMode.Create, FileAccess.Write);
+            formatter.Serialize(stream, offers);
+            stream.Close();
+            Close();
         }
     }
 }

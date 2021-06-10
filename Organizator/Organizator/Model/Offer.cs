@@ -24,13 +24,17 @@ namespace Organizator.Model
         private string _place;
         private string _associateName;
         private int _price;
+        private string _sender;
+        private string _client;
 
-        public Offer(string place, string associateName, DateTime dateTime, int price)
+        public Offer(string place, string associateName, DateTime dateTime, int price, string sender, string client)
         {
             _dateTime = dateTime;
             _associateName = associateName;
             _place = place;
             _price = price;
+            _sender = sender;
+            _client = client;
         }
 
         public string AssociateName
@@ -93,6 +97,38 @@ namespace Organizator.Model
                 {
                     _price = value;
                     OnPropertyChanged("Price");
+                }
+            }
+        }
+
+        public string Sender
+        {
+            get
+            {
+                return _sender;
+            }
+            set
+            {
+                if (value != _sender)
+                {
+                    _sender = value;
+                    OnPropertyChanged("Sender");
+                }
+            }
+        }
+
+        public string Client
+        {
+            get
+            {
+                return _client;
+            }
+            set
+            {
+                if (value != _client)
+                {
+                    _client = value;
+                    OnPropertyChanged("Client");
                 }
             }
         }

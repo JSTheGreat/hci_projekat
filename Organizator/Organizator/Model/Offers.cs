@@ -28,9 +28,9 @@ namespace Organizator.Model
             this.offers = list;
         }
 
-        public void addOffer(ObservableCollection<Offer> deleteList)
+        public void addOffer(ObservableCollection<Offer> offerList)
         {
-            foreach (Offer r in deleteList)
+            foreach (Offer r in offerList)
             {
                 this.offers.Add(r);
             }
@@ -43,10 +43,20 @@ namespace Organizator.Model
 
         public bool offerExists(Offer offer)
         {
-            foreach(var o in offers)
+            foreach(var o in this.offers)
             {
                 if (o.Place.Equals(offer.Place) && o.Time.TimeOfDay == offer.Time.TimeOfDay
                     && o.Time.Date == offer.Time.Date && o.AssociateName.Equals(offer.AssociateName))
+                    return true;
+            }
+            return false;
+        }
+
+        public bool sameSender(string sender, string client)
+        {
+            foreach (var o in this.offers)
+            {
+                if (o.AssociateName.Equals(sender) && o.Client.Equals(client))
                     return true;
             }
             return false;

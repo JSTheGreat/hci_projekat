@@ -63,15 +63,15 @@ namespace Organizator
             formatter.Serialize(stream, associates);
             stream.Close();
             Request re1 = new Request("client1", "birthday", new DateTime(2021, 6, 20, 12, 30, 0), "pl1", 1000, "user1");
-            Request re2 = new Request("client2", "birthday party", new DateTime(2021, 6, 21, 12, 00, 0), "pl1", 2000, "user1");
-            Request re3 = new Request("client3", "promotion", new DateTime(2021, 6, 22, 12, 30, 0), "pl2", 3000, "user1");
-            Request re4 = new Request("client4", "promotion party", new DateTime(2021, 6, 20, 14, 30, 0), "pl2", 4000, "user1");
-            Request re5 = new Request("client5", "retirement party", new DateTime(2021, 6, 20, 14, 30, 0), "pl2", 5000, "user1");
-            Request re6 = new Request("client6", "birthday", new DateTime(2021, 6, 20, 12, 30, 0), "pl1", 1000, "user2");
-            Request re7 = new Request("client7", "birthday party", new DateTime(2021, 6, 21, 12, 00, 0), "pl1", 2000, "user2");
-            Request re8 = new Request("client8", "promotion", new DateTime(2021, 6, 22, 12, 30, 0), "pl1", 3000, "user2");
-            Request re9 = new Request("client9", "promotion party", new DateTime(2021, 6, 20, 14, 30, 0), "pl2", 4000, "user2");
-            Request re10 = new Request("client10", "retirement party", new DateTime(2021, 6, 20, 14, 30, 0), "pl2", 5000, "user2");
+            Request re2 = new Request("client2", "birthday party", new DateTime(2021, 6, 21, 12, 00, 0), "pl1", 3500, "user1");
+            Request re3 = new Request("client3", "promotion", new DateTime(2021, 6, 22, 12, 30, 0), "pl2", 5000, "user1");
+            Request re4 = new Request("client4", "promotion party", new DateTime(2021, 6, 22, 12, 30, 0), "pl2", 5000, "user1");
+            Request re5 = new Request("client5", "retirement party", new DateTime(2021, 6, 20, 14, 30, 0), "pl2", 4500, "user1");
+            Request re6 = new Request("client6", "birthday", new DateTime(2021, 6, 20, 13, 30, 0), "pl1", 4000, "user2");
+            Request re7 = new Request("client7", "birthday party", new DateTime(2021, 6, 21, 12, 00, 0), "pl1", 4000, "user2");
+            Request re8 = new Request("client8", "promotion", new DateTime(2021, 6, 22, 12, 30, 0), "pl1", 4500, "user2");
+            Request re9 = new Request("client9", "promotion party", new DateTime(2021, 6, 22, 12, 30, 0), "pl2", 4000, "user2");
+            Request re10 = new Request("client10", "retirement party", new DateTime(2021, 6, 20, 14, 30, 0), "pl2", 3000, "user2");
             List<Request> list3 = new List<Request>();
             list3.Add(re1);
             list3.Add(re2);
@@ -86,6 +86,10 @@ namespace Organizator
             Requests requests = new Requests(list3);
             stream = new FileStream("../../Files/requests.txt", FileMode.Create, FileAccess.Write);
             formatter.Serialize(stream, requests);
+            stream.Close();
+            Offers offers = new Offers(new List<Offer>());
+            stream = new FileStream("../../Files/sentOffers.txt", FileMode.Create, FileAccess.Write);
+            formatter.Serialize(stream, offers);
             stream.Close();
         }
 
