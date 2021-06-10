@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Organizator aplikacija" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
     <DockPanel>
-        <Menu HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0" IsEnabled="{DynamicResource windowOpened}">
+        <Menu HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0" IsEnabled="{DynamicResource windowOpened}" ToolTip="This is the main menu. You must be logged to be able to access most features">
             <Menu.ItemsPanel>
                 <!--Podkontrola koja određuje kako se item-i prikazuju.-->
                 <ItemsPanelTemplate>
@@ -18,13 +18,13 @@
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
             <MenuItem Header="_Registration">
-                <MenuItem x:Name="login_btn" Header="_Log in" Click="MenuItem_Click" IsEnabled="{DynamicResource loggedOut}"/>
-                <MenuItem x:Name="logout_btn" Header="_Log out" IsEnabled="{DynamicResource loggedIn}" Click="logout_btn_Click"/>
+                <MenuItem x:Name="login_btn" Header="_Log in" Click="MenuItem_Click" IsEnabled="{DynamicResource loggedOut}" ToolTip="Opens login window"/>
+                <MenuItem x:Name="logout_btn" Header="_Log out" IsEnabled="{DynamicResource loggedIn}" Click="logout_btn_Click" ToolTip="Log out to switch to a different user"/>
             </MenuItem>
-            <MenuItem x:Name="requests" Header="_Event requests" IsEnabled="{DynamicResource loggedIn}" Click="requests_Click"/>
+            <MenuItem x:Name="requests" Header="_Event requests" IsEnabled="{DynamicResource loggedIn}" Click="requests_Click" ToolTip="View requests sent to You"/>
             <MenuItem x:Name="associates" Header="_Business associates" IsEnabled="{DynamicResource loggedIn}" Margin="0,0,0,-0.2" Width="613">
-                <MenuItem Header="_All business associates" Click="all_associates"/>
-                <MenuItem Header="_Add associate" Click="MenuItem_Click_1"/>
+                <MenuItem Header="_All business associates" Click="all_associates" ToolTip="List of all business associates"/>
+                <MenuItem Header="_Add associate" Click="MenuItem_Click_1" ToolTip="Opens window for adding a new business associate"/>
             </MenuItem>
         </Menu>
     </DockPanel>

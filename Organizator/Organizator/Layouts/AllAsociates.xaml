@@ -14,7 +14,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dgrMain" ItemsSource="{Binding Asssociates}" IsReadOnly="True"/>
+        <DataGrid x:Name="dgrMain" ItemsSource="{Binding Asssociates}" IsReadOnly="True" ToolTip="Click on column to name to sort list by said column"/>
         <Grid Grid.Column="0" Grid.Row="1" DataContext="{Binding ElementName=dgrMain,Path=SelectedItem}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -31,7 +31,7 @@
             <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0.2,98.664,17.6" Grid.RowSpan="2">Type:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,18.2,98.664,-0.4" Grid.RowSpan="2">Number:</TextBlock>
 
-            <TextBox x:Name="GivenName" Grid.Row="0" Text="{Binding Path=Name}" Grid.ColumnSpan="3" Margin="46,0,-0.4,17.8" Grid.RowSpan="2" DataContextChanged="TextBox_DataContextChanged"/>
+            <TextBox x:Name="GivenName" Grid.Row="0" Text="{Binding Path=Name}" Grid.ColumnSpan="3" Margin="46,0,-0.4,17.8" Grid.RowSpan="2" DataContextChanged="TextBox_DataContextChanged" ToolTip="New name should be unique"/>
             <ComboBox Text="{Binding Path=Place}" Grid.ColumnSpan="3" Margin="46,18,-0.4,18.2" Grid.RowSpan="3">
                 <ComboBoxItem>pl1</ComboBoxItem>
                 <ComboBoxItem>pl2</ComboBoxItem>
@@ -40,7 +40,7 @@
                 <ComboBoxItem>restaurant</ComboBoxItem>
                 <ComboBoxItem>catering firm</ComboBoxItem>
             </ComboBox>
-            <TextBox Grid.Row="2" Text="{Binding Path=Number}" Grid.ColumnSpan="3" Margin="46,18.2,-0.4,-0.4" Grid.RowSpan="2"/>
+            <TextBox Grid.Row="2" Text="{Binding Path=Number}" Grid.ColumnSpan="3" Margin="46,18.2,-0.4,-0.4" Grid.RowSpan="2" ToolTip="New number should be unique"/>
         </Grid>
     </Grid>
 </Window>

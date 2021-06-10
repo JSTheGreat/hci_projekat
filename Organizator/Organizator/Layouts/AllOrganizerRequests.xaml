@@ -14,8 +14,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dgrMain" ItemsSource="{Binding Reqquests}" IsReadOnly="True"/>
-        <Grid Grid.Column="0" Grid.Row="1" DataContext="{Binding ElementName=dgrMain,Path=SelectedItem}">
+        <DataGrid x:Name="dgrMain" ItemsSource="{Binding Reqquests}" IsReadOnly="True" ToolTip="Click on column to name to sort list by said column"/>
+        <Grid Grid.Column="0" Grid.Row="1" DataContext="{Binding ElementName=dgrMain,Path=SelectedItem}" ToolTip="This table is read only">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -40,7 +40,7 @@
             <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=Time}" IsReadOnly="True"></TextBox>
             <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=PartyType}" IsReadOnly="True"></TextBox>
             <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=MaxBudget}" IsReadOnly="True"></TextBox>
-            <Button x:Name="suggest_btn" Grid.Column="1" Grid.Row="5" Content="{Binding Path=Client}" Click="suggest_btn_Click"></Button>
+            <Button x:Name="suggest_btn" Grid.Column="1" Grid.Row="5" Content="{Binding Path=Client}" Click="suggest_btn_Click" ToolTip="Open window for making offer suggestions for selected request"></Button>
         </Grid>
     </Grid>
 </Window>
