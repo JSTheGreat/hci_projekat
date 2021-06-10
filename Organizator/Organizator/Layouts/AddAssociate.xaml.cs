@@ -29,10 +29,20 @@ namespace Organizator.Layouts
         private string number;
         private string place;
 
+        private Associates associates1;
+
         public AddAssociate()
         {
             App.Current.Resources["windowOpened"] = false;
             InitializeComponent();
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream("../../Files/associates.txt", FileMode.Open, FileAccess.Read);
+            associates1 = (Associates)formatter.Deserialize(stream);
+            stream.Close();
+            this.type = "restaurant";
+            this.place = "pl1";
+            this.name = "";
+            this.number = "";
         }
 
         private void ClosedEvent(object sender, EventArgs e)
@@ -50,15 +60,13 @@ namespace Organizator.Layouts
             this.number = Number.Text;
         }
 
-        private void Place_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            this.place = Place.Text;
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (name == "" || number == "" || place == "" || type == "")
-                MessageBox.Show("No field can remain empty", "Warning");
+            Console.WriteLine($"{this.number} {this.name} {this.place} {this.type}");
+            if (this.name.Equals("") || this.number.Equals("") || this.place.Equals("") || this.type.Equals(""))
+                MessageBox.Show("No field can remain empty. Please fill them in", "Warning");
+            else if (!associates1.isUnique(name, number))
+                MessageBox.Show("Name or number given is not unique. Please try entering different values for given fields", "Warning");
             else
             {
                 Console.WriteLine("type: " + type);
@@ -78,5 +86,11 @@ namespace Organizator.Layouts
         {
             this.type = Type.Text;
         }
+
+        private void Place_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.place = Place.Text;
+        }
+
     }
 }

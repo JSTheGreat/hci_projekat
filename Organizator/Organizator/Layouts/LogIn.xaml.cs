@@ -25,8 +25,8 @@ namespace Organizator.Layouts
     {
 
         private Users users;
-        private string username;
-        private string password;
+        private string username = "";
+        private string password = "";
 
         public LogIn()
         {
@@ -41,7 +41,9 @@ namespace Organizator.Layouts
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             User user = new User(this.username, this.password);
-            if (!this.users.userExists(user))
+            if (this.username == "" || this.password == "")
+                MessageBox.Show("Username or password not given. Please check for empty field", "Warning");
+            else if (!this.users.userExists(user))
                 MessageBox.Show("User with given username and password does not exist. Please check spelling on username or password", "Warning");
             else
             {

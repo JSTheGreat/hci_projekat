@@ -57,5 +57,14 @@ namespace Organizator.Layouts
             stream.Close();
             App.Current.Resources["windowOpened"] = true;
         }
+
+        private void TextBox_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream("../../Files/associates.txt", FileMode.Open, FileAccess.Read);
+            Associates a = (Associates)formatter.Deserialize(stream);
+            stream.Close();
+            Console.WriteLine("Name change detected");
+        }
     }
 }

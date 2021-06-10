@@ -38,5 +38,15 @@ namespace Organizator.Model
             return this.associates;
         }
 
+        public bool isUnique(string name, string number)
+        {
+            foreach(var a in associates)
+            {
+                if (a.Name.Equals(name) || a.Number.Equals(number))
+                    return false;
+            }
+            return true;
+        }
+
     }
 }

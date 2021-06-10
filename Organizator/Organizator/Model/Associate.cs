@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Organizator.Model
@@ -42,7 +43,7 @@ namespace Organizator.Model
             }
             set
             {
-                if (value != _name)
+                if (value != _name && value != null && !value.Equals(""))
                 {
                     _name = value;
                     OnPropertyChanged("Name");
@@ -58,7 +59,7 @@ namespace Organizator.Model
             }
             set
             {
-                if (value != _number)
+                if (value != _number && value != null && !value.Equals(""))
                 {
                     _number = value;
                     OnPropertyChanged("Number");
@@ -74,7 +75,7 @@ namespace Organizator.Model
             }
             set
             {
-                if (value != _place)
+                if (value != _place && value != null && !value.Equals(""))
                 {
                     _place = value;
                     OnPropertyChanged("Place");
@@ -90,7 +91,7 @@ namespace Organizator.Model
             }
             set
             {
-                if (value != _type)
+                if (value != _type && value != null && !value.Equals(""))
                 {
                     _type = value;
                     OnPropertyChanged("Type");
